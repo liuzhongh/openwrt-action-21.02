@@ -2,7 +2,7 @@
 sed -i 's/192.168.1.1/192.168.199.1/g' package/base-files/files/bin/config_generate
 
 # 默认主题
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-edge/luci-theme-edge/g' feeds/luci/collections/luci/Makefile
 
 # 固件架构
 cat >> .config <<EOF
@@ -10,9 +10,10 @@ CONFIG_TARGET_ipq40xx=y
 CONFIG_TARGET_ipq40xx_DEVICE_hiwifi_c526a=y
 EOF
 
-# 禁用 IPV6
+# 启用 IPV6
 cat >> .config <<EOF
 # CONFIG_IPV6 is not set
+CONFIG_IPV6=y
 EOF
 
 # 取消默认启用的包
@@ -69,6 +70,20 @@ EOF
 #CONFIG_PACKAGE_autosamba=y
 #CONFIG_PACKAGE_default-settings=y
 #EOF
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-guest-wifi=y
+CONFIG_PACKAGE_luci-i18n-guest-wifi-zh-cn=y
+CONFIG_FEED_helloworld=y
+EOF
 
+#
+# 4. Themes
+#
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-theme-Butterfly=y
+CONFIG_PACKAGE_luci-theme-edge=y
+CONFIG_PACKAGE_luci-theme-infinityfreedom=y
+CONFIG_PACKAGE_luci-theme-netgear=y
+EOF
 # 其它
 sed -i '21d' package/lean/default-settings/files/zzz-default-settings #禁止网络共享分类到NAS
