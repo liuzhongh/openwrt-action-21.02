@@ -70,9 +70,9 @@ EOF
 #CONFIG_PACKAGE_autosamba=y
 #CONFIG_PACKAGE_default-settings=y
 #EOF
+
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-guest-wifi=y
-CONFIG_PACKAGE_luci-i18n-guest-wifi-zh-cn=y
 EOF
 
 #
