@@ -2,7 +2,7 @@
 sed -i 's/192.168.1.1/192.168.199.1/g' package/base-files/files/bin/config_generate
 
 # 默认主题
-sed -i 's/luci-theme-bootstrap/luci-theme-edge/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 固件架构
 cat >> .config <<EOF
@@ -75,8 +75,6 @@ cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-nlbwmon=y
 CONFIG_PACKAGE_luci-app-adbyby-plus=y
 CONFIG_PACKAGE_luci-app-aria2=y
-CONFIG_PACKAGE_luci-app-vlmcsd=y
-CONFIG_PACKAGE_luci-app-statistics=y
 CONFIG_PACKAGE_luci-app-ramfree=y
 CONFIG_PACKAGE_luci-app-netdata=y
 CONFIG_PACKAGE_luci-app-ddns=y
@@ -84,11 +82,10 @@ CONFIG_PACKAGE_luci-app-filetransfer=y
 CONFIG_PACKAGE_luci-app-vsftpd=y
 CONFIG_PACKAGE_luci-app-ssr-plus=y
 CONFIG_PACKAGE_luci-app-arpbind=y
-CONFIG_PACKAGE_luci-app-vlmcsd=y
 CONFIG_PACKAGE_luci-app-wol=y
+CONFIG_PACKAGE_luci-app-turboacc=y
 CONFIG_PACKAGE_luci-app-accesscontrol=y
 CONFIG_PACKAGE_luci-app-cpufreq=y
-CONFIG_PACKAGE_luci-app-ipsec-vpnd=y
 CONFIG_PACKAGE_v2ray=y
 CONFIG_PACKAGE_ddns-scripts_dnspod=y
 CONFIG_PACKAGE_luci-app-guest-wifi=y
@@ -98,10 +95,7 @@ EOF
 # 4. Themes
 #
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-theme-Butterfly=y
-CONFIG_PACKAGE_luci-theme-edge=y
-CONFIG_PACKAGE_luci-theme-infinityfreedom=y
-CONFIG_PACKAGE_luci-theme-netgear=y
+CONFIG_PACKAGE_luci-theme-argon=y
 EOF
 # 其它
 sed -i '21d' package/lean/default-settings/files/zzz-default-settings #禁止网络共享分类到NAS
