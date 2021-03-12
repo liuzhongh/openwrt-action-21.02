@@ -11,10 +11,9 @@ CONFIG_TARGET_ipq40xx_DEVICE_hiwifi_c526a=y
 EOF
 
 # 启用 IPV6
-cat >> .config <<EOF
-# CONFIG_IPV6 is not set
-CONFIG_IPV6=y
-EOF
+# cat >> .config <<EOF
+# CONFIG_IPV6=y
+# EOF
 
 # 取消默认启用的包
 cat >> .config <<EOF
