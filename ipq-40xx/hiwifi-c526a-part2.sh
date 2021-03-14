@@ -10,10 +10,17 @@ CONFIG_TARGET_ipq40xx=y
 CONFIG_TARGET_ipq40xx_DEVICE_hiwifi_c526a=y
 EOF
 
-# 启用 IPV6
-# cat >> .config <<EOF
-# CONFIG_IPV6=y
-# EOF
+# IPV6
+cat >> .config <<EOF
+CONFIG_PACKAGE_ip6tables=y
+CONFIG_PACKAGE_iptables-mod-extra=y
+CONFIG_PACKAGE_iptables-mod-nat-extra=y
+CONFIG_PACKAGE_ipv6helper=y
+CONFIG_PACKAGE_odhcp6c=y
+CONFIG_PACKAGE_odhcp6c_ext_cer_id=0
+CONFIG_PACKAGE_odhcpd-ipv6only=y
+CONFIG_PACKAGE_odhcpd_ipv6only_ext_cer_id=0
+EOF
 
 # 取消默认启用的包
 cat >> .config <<EOF
