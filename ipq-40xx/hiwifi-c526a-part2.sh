@@ -12,7 +12,7 @@ EOF
 
 # IPV6
 cat >> .config <<EOF
-CONFIG_IPV6=n
+CONFIG_IPV6=y
 CONFIG_PACKAGE_ip6tables=y
 CONFIG_PACKAGE_iptables-mod-extra=y
 CONFIG_PACKAGE_iptables-mod-nat-extra=y
