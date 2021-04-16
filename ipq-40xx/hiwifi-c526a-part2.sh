@@ -109,10 +109,10 @@ EOF
 #
 # 多拨负载均衡
 #
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-syncdial=y
-CONFIG_PACKAGE_luci-app-mwan3=y
-CONFIG_PACKAGE_luci-app-mwan3helper=y
-EOF
+# cat >> .config <<EOF
+# CONFIG_PACKAGE_luci-app-syncdial=y
+# CONFIG_PACKAGE_luci-app-mwan3=y
+# CONFIG_PACKAGE_luci-app-mwan3helper=y
+# EOF
 # 其它
 sed -i '21d' package/lean/default-settings/files/zzz-default-settings #禁止网络共享分类到NAS
