@@ -115,4 +115,4 @@ EOF
 # CONFIG_PACKAGE_luci-app-mwan3helper=y
 # EOF
 # 其它
-sed -i '21d' package/lean/default-settings/files/zzz-default-settings #禁止网络共享分类到NAS
+# sed -i '21d' package/lean/default-settings/files/zzz-default-settings #禁止网络共享分类到NAS
